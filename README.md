@@ -9,11 +9,12 @@ Bu proje; gençlerin ilgi alanlarına uygun kişileri bulup ağ kurmasını (Net
 Aşağıda projemizin kullanıcı dostu arayüzünden bazı örnekler bulunmaktadır:
 
 <p align="center">
-  <img src="assets/home.png" width="18%" />
-  <img src="assets/events.png" width="18%" />
-  <img src="assets/clubs.png" width="18%" />
-  <img src="assets/club-detail.png" width="18%" />
-  <img src="assets/profile.png" width="18%" />
+  <img src="assets/home.png" width="16%" />
+  <img src="assets/events.png" width="16%" />
+  <img src="assets/clubs.png" width="16%" />
+  <img src="assets/networking.png" width="16%" />
+  <img src="assets/club-detail.png" width="16%" />
+  <img src="assets/profile.png" width="16%" />
 </p>
 
 ## 🌟 Temel Özellikler
