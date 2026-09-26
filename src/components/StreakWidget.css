@@ -1,0 +1,396 @@
+/* ─── Streak Widget ─────────────────────────────────────── */
+.streak-widget {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    background: var(--color-bg-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-xl);
+    padding: 14px 20px;
+    margin-bottom: var(--spacing-xl);
+    overflow: hidden;
+    position: relative;
+}
+.streak-widget.minimized {
+    padding: 8px 12px;
+    margin-bottom: var(--spacing-lg);
+    gap: 8px;
+}
+
+    pointer-events: none;
+}
+.streak-widget.transparent {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 10px 0 0 0;
+    margin-bottom: 0;
+}
+.streak-widget.transparent::before {
+    display: none;
+}
+
+/* ─── Streak Block ─── */
+.streak-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 8px 24px;
+    flex: 1;
+    transition: transform 0.3s ease;
+}
+.minimized .streak-block {
+    padding: 4px 12px;
+}
+
+.streak-block.streak-anim {
+    animation: streakPop 0.6s ease;
+}
+
+@keyframes streakPop {
+    0%   { transform: scale(1); }
+    40%  { transform: scale(1.3); }
+    70%  { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+
+.streak-flame {
+    font-size: 1.6rem;
+    line-height: 1;
+    filter: drop-shadow(0 0 8px var(--streak-color, #ef4444));
+}
+
+.streak-number {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--streak-color, #6b7280);
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+.minimized .streak-flame { font-size: 1.2rem; }
+.minimized .streak-number { font-size: 1.4rem; }
+.minimized .streak-label { font-size: 8px; }
+
+.streak-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-tertiary);
+    font-weight: 700;
+}
+
+/* ─── Divider ─── */
+.streak-divider {
+    width: 1px;
+    height: 40px;
+    background: var(--color-bg-tertiary);
+    flex-shrink: 0;
+}
+
+/* ─── Stat Buttons ─── */
+.streak-stat-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 8px 20px;
+    flex: 1;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: opacity 0.2s;
+    border-radius: var(--radius-lg);
+}
+.minimized .streak-stat-btn {
+    padding: 4px 12px;
+}
+.minimized .streak-stat-icon { font-size: 1.1rem; }
+.minimized .streak-stat-number { font-size: 1.1rem; }
+.minimized .streak-stat-label { font-size: 8px; }
+
+.streak-stat-btn:hover {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.streak-stat-icon {
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+.streak-stat-number {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--color-text-primary);
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+.streak-stat-total {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-text-tertiary);
+}
+
+.streak-stat-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-tertiary);
+    font-weight: 700;
+}
+
+.streak-complete-badge {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    background: #10b981;
+    color: #fff;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    font-size: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+}
+
+.streak-new-badge {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    background: #ef4444;
+    color: #fff;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    font-size: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50%       { transform: scale(1.15); opacity: 0.85; }
+}
+
+/* ─── Modal Overlay ─── */
+.engagement-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(76, 29, 149, 0.35);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1100;
+    padding: 20px;
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.engagement-modal {
+    background: var(--color-bg-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: var(--radius-xl);
+    padding: 28px;
+    width: 100%;
+    max-width: 440px;
+    max-height: 82vh;
+    overflow-y: auto;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+    animation: slideUp 0.25s ease;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to   { transform: translateY(0);    opacity: 1; }
+}
+
+.engagement-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.engagement-modal-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.engagement-modal-close {
+    background: var(--color-bg-tertiary);
+    border: none;
+    color: var(--color-text-secondary);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.engagement-modal-close:hover {
+    background: rgba(239, 68, 68, 0.15);
+    color: #ef4444;
+}
+
+.engagement-modal-subtitle {
+    font-size: 13px;
+    color: var(--color-text-tertiary);
+    margin-bottom: 20px;
+}
+
+/* ─── Challenge List ─── */
+.challenge-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.challenge-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    border-radius: var(--radius-lg);
+    background: var(--color-bg-tertiary);
+    border: 1px solid transparent;
+    transition: all 0.2s;
+}
+
+.challenge-item.completed {
+    background: rgba(16, 185, 129, 0.08);
+    border-color: rgba(16, 185, 129, 0.2);
+}
+
+.challenge-check {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.challenge-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.challenge-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    line-height: 1.3;
+}
+
+.challenge-date {
+    font-size: 11px;
+    color: #10b981;
+    margin-top: 2px;
+}
+
+.challenge-credit {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-text-tertiary);
+    white-space: nowrap;
+}
+
+.challenge-credit.earned {
+    color: #10b981;
+}
+
+.challenge-total {
+    margin-top: 16px;
+    text-align: right;
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    padding-top: 12px;
+    border-top: 1px solid var(--color-bg-tertiary);
+}
+
+/* ─── Badge Grid ─── */
+.badge-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.badge-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 16px 10px;
+    border-radius: var(--radius-lg);
+    background: var(--color-bg-tertiary);
+    border: 1px solid transparent;
+    position: relative;
+    transition: all 0.2s;
+    text-align: center;
+}
+
+.badge-item.earned {
+    background: rgba(139, 92, 246, 0.08);
+    border-color: rgba(139, 92, 246, 0.2);
+}
+
+.badge-item.earned:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(139, 92, 246, 0.15);
+}
+
+.badge-item.locked {
+    opacity: 0.5;
+}
+
+.badge-emoji {
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+.badge-name {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--color-text-secondary);
+    line-height: 1.2;
+}
+
+.badge-date {
+    font-size: 9px;
+    color: #8b5cf6;
+    font-weight: 600;
+}
+
+.badge-locked-overlay {
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    font-size: 12px;
+    opacity: 0.6;
+}
+
+.badge-new-dot {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 8px;
+    height: 8px;
+    background: #ef4444;
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+}
+

@@ -1,0 +1,16 @@
+{
+  "appId": "com.universe.app",
+  "appName": "Bondle",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https",
+    "hostname": "localhost"
+  },
+  "plugins": {
+    "GoogleAuth": {
+      "scopes": ["profile", "email"],
+      "serverClientId": "921641907126-25rsdrbo8etvtb9b05qp1msj9g35qo7v.apps.googleusercontent.com",
+      "forceCodeForRefreshToken": true
+    }
+  }
+}

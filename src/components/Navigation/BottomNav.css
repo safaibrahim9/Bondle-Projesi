@@ -1,0 +1,122 @@
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: var(--bottom-nav-height);
+    background: var(--color-bg-secondary);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid var(--color-bg-tertiary);
+    z-index: var(--z-fixed);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.bottom-nav-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+}
+
+.bottom-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 4px 0;
+    color: var(--color-text-tertiary);
+    text-decoration: none;
+    flex: 1;
+    min-width: 60px;
+    position: relative;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Base icon state */
+.bottom-nav-item svg {
+    transition: transform 250ms cubic-bezier(0.34, 1.56, 0.64, 1), color 200ms ease;
+    transform: scale(1) translateY(2px);
+    opacity: 0.8;
+}
+
+/* Hover state for non-touch devices */
+@media (hover: hover) {
+    .bottom-nav-item:hover {
+        color: var(--color-text-secondary);
+    }
+    .bottom-nav-item:hover svg {
+        opacity: 1;
+        transform: scale(1.05) translateY(0);
+    }
+}
+
+/* Active Tab Indicator (Top line) */
+.bottom-nav-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 32px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-accent-primary), var(--color-accent-secondary));
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    transform: translateX(-50%) scaleX(0);
+    opacity: 0;
+    transition: transform 250ms cubic-bezier(0.34, 1.56, 0.64, 1), opacity 200ms ease;
+}
+
+/* Active State Styles */
+.bottom-nav-item.active {
+    color: var(--color-accent-primary);
+}
+
+.bottom-nav-item.active::before {
+    transform: translateX(-50%) scaleX(1);
+    opacity: 1;
+}
+
+.bottom-nav-item.active svg {
+    transform: scale(1.15) translateY(-2px);
+    color: var(--color-accent-primary);
+    opacity: 1;
+}
+
+/* Label Animation */
+.bottom-nav-label {
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0.7;
+    transform: translateY(0);
+    transition: opacity 200ms ease, transform 250ms cubic-bezier(0.34, 1.56, 0.64, 1), font-weight 200ms;
+}
+
+.bottom-nav-item.active .bottom-nav-label {
+    opacity: 1;
+    font-weight: 700;
+}
+
+/* Center UniVerse button */
+.bottom-nav-item.center-item svg {
+    width: 28px;
+    height: 28px;
+    transition: transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1), color 200ms ease;
+}
+
+.bottom-nav-item.center-item.active svg {
+    transform: scale(1.2) translateY(-2px);
+    color: var(--color-accent-primary);
+}
+
+/* Safe area for iOS */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+    .bottom-nav {
+        padding-bottom: env(safe-area-inset-bottom);
+        height: calc(var(--bottom-nav-height) + env(safe-area-inset-bottom));
+    }
+}

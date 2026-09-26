@@ -1,0 +1,221 @@
+/* ===== Competition Card — Square Layout ===== */
+
+.comp-card {
+    background: var(--color-card-bg);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--color-card-border);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    aspect-ratio: 1 / 1;
+}
+
+.comp-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+/* Image header */
+.comp-card-image {
+    position: relative;
+    width: 100%;
+    height: 140px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.comp-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.comp-card-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, transparent 60%);
+}
+
+/* Gradient header (no image) */
+.comp-card-gradient-header {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Category badge */
+.comp-card-badges {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.comp-card-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    background: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    backdrop-filter: blur(6px);
+    letter-spacing: 0.3px;
+}
+
+.comp-badge-online {
+    background: rgba(16, 185, 129, 0.75);
+}
+
+.comp-badge-offline {
+    background: rgba(59, 130, 246, 0.75);
+}
+
+/* Content area */
+.comp-card-content {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+}
+
+/* Title - prominent */
+.comp-card-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin: 0 0 8px 0;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Description */
+.comp-card-desc {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+    margin: 0 0 12px 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+/* Deadline row */
+.comp-card-deadline {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    flex-wrap: wrap;
+    margin-bottom: auto;
+    padding-bottom: 12px;
+}
+
+.comp-card-deadline svg {
+    color: var(--color-accent-primary);
+    flex-shrink: 0;
+}
+
+.comp-card-deadline strong {
+    color: var(--color-text-primary);
+    font-weight: 600;
+}
+
+.comp-card-deadline-divider {
+    opacity: 0.4;
+}
+
+/* Prize */
+.comp-card-prize {
+    padding: 6px 12px;
+    background: var(--color-bg-tertiary);
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-accent-primary);
+    display: inline-block;
+    align-self: flex-start;
+    margin-bottom: 12px;
+}
+
+/* Button base */
+.comp-card-btn {
+    width: 100%;
+    padding: 11px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.2s ease, transform 0.15s ease;
+    flex-shrink: 0;
+}
+
+.comp-card-btn:not(:disabled):hover {
+    opacity: 0.9;
+    transform: scale(1.01);
+}
+
+/* Button variants */
+.comp-btn-default {
+    background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
+    color: #fff;
+}
+
+.comp-btn-pending {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: #fff;
+    cursor: default;
+}
+
+.comp-btn-approved {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: #fff;
+    cursor: default;
+}
+
+.comp-btn-rejected {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: #fff;
+    cursor: default;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .comp-card {
+        aspect-ratio: auto;
+    }
+
+    .comp-card-image {
+        height: 120px;
+    }
+
+    .comp-card-gradient-header {
+        height: 80px;
+    }
+
+    .comp-card-title {
+        font-size: 16px;
+    }
+}

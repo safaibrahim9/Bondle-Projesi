@@ -1,0 +1,196 @@
+/*
+ * 📱 NATIVE MOBILE APK OVERRIDES
+ * Applied when running inside Capacitor Android (https://localhost origin).
+ * Reduces all UI elements to native-app-appropriate sizes.
+ * These override global.css for mobile-native builds.
+ */
+
+/* ─── Base Scaling ──────────────────────────────────────────────────────── */
+html {
+  font-size: 13px !important; /* Capacitor WebView renders at higher DPI — scale down */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+:root {
+  /* Compact typography for native phone screens */
+  --font-size-xs:   0.65rem;   /* ~8.5px  */
+  --font-size-sm:   0.75rem;   /* ~9.75px */
+  --font-size-base: 0.875rem;  /* ~11px   */
+  --font-size-lg:   0.95rem;   /* ~12.5px */
+  --font-size-xl:   1.05rem;   /* ~13.5px */
+  --font-size-2xl:  1.2rem;    /* ~16px   */
+  --font-size-3xl:  1.5rem;    /* ~20px   */
+
+  /* Compact spacing */
+  --spacing-xs:  0.2rem;
+  --spacing-sm:  0.375rem;
+  --spacing-md:  0.65rem;
+  --spacing-lg:  1rem;
+  --spacing-xl:  1.3rem;
+  --spacing-2xl: 1.8rem;
+
+  /* Smaller bottom nav */
+  --bottom-nav-height: 58px;
+}
+
+/* ─── Typography ────────────────────────────────────────────────────────── */
+h1 { font-size: 1.4rem !important; }
+h2 { font-size: 1.2rem !important; }
+h3 { font-size: 1.05rem !important; }
+h4 { font-size: 0.95rem !important; }
+h5 { font-size: 0.875rem !important; }
+h6 { font-size: 0.8rem !important; }
+
+p  { margin-bottom: var(--spacing-sm); }
+
+/* ─── Icons (Lucide) ────────────────────────────────────────────────────── */
+svg {
+  max-width: 100%;
+}
+
+/* General icon size reduction — use !important to override inline styles */
+.bottom-nav-item svg {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.bottom-nav-item.center-item svg {
+  width: 26px !important;
+  height: 26px !important;
+}
+
+/* Sidebar icons */
+.sidebar-nav-item svg,
+.sidebar svg {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+/* Button icons */
+button svg,
+.btn svg {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+/* Page header icons */
+.page-header svg,
+h1 svg, h2 svg, h3 svg {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+/* Card icons */
+.card svg,
+.event-card svg,
+.club-card svg {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+/* ─── Bottom Navigation Bar ─────────────────────────────────────────────── */
+.bottom-nav {
+  height: var(--bottom-nav-height) !important;
+}
+
+.bottom-nav-label {
+  font-size: 0.6rem !important;
+}
+
+/* ─── Buttons ───────────────────────────────────────────────────────────── */
+button,
+.btn {
+  min-height: 40px !important;
+  font-size: var(--font-size-sm) !important;
+  padding: var(--spacing-xs) var(--spacing-md) !important;
+  border-radius: var(--radius-lg) !important;
+}
+
+.btn-sm {
+  min-height: 34px !important;
+  font-size: var(--font-size-xs) !important;
+  padding: var(--spacing-xs) var(--spacing-sm) !important;
+}
+
+.btn-lg {
+  min-height: 48px !important;
+  font-size: var(--font-size-base) !important;
+  padding: var(--spacing-sm) var(--spacing-lg) !important;
+}
+
+/* Google sign-in button */
+.btn-google-signin {
+  min-height: 48px !important;
+  font-size: var(--font-size-base) !important;
+}
+
+/* ─── Form Inputs ───────────────────────────────────────────────────────── */
+input,
+textarea,
+select {
+  font-size: 14px !important; /* Min 16px prevents iOS zoom, but 14px fine on Android */
+  min-height: 42px !important;
+  padding: var(--spacing-xs) var(--spacing-sm) !important;
+}
+
+/* ─── Cards ─────────────────────────────────────────────────────────────── */
+.card-body {
+  padding: var(--spacing-md) !important;
+}
+
+.card {
+  border-radius: var(--radius-lg) !important;
+}
+
+/* ─── Page / Container ──────────────────────────────────────────────────── */
+.container {
+  padding: 0 var(--spacing-sm) !important;
+}
+
+.page {
+  padding: var(--spacing-sm) 0 !important;
+}
+
+/* ─── Modals ────────────────────────────────────────────────────────────── */
+.modal-content {
+  border-radius: var(--radius-xl) !important;
+  max-height: 85vh !important;
+}
+
+/* ─── Safe Area (Notch / Navigation Bar) ────────────────────────────────── */
+body {
+  padding-top:    env(safe-area-inset-top) !important;
+  padding-left:   env(safe-area-inset-left) !important;
+  padding-right:  env(safe-area-inset-right) !important;
+  padding-bottom: calc(var(--bottom-nav-height) + env(safe-area-inset-bottom)) !important;
+}
+
+.bottom-nav {
+  padding-bottom: env(safe-area-inset-bottom);
+  height: calc(var(--bottom-nav-height) + env(safe-area-inset-bottom)) !important;
+}
+
+/* ─── Scrollbar (hide on mobile native) ─────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 0 !important;
+  display: none !important;
+}
+
+/* ─── Touch / Tap Feedback ──────────────────────────────────────────────── */
+* {
+  -webkit-tap-highlight-color: rgba(139, 92, 246, 0.15);
+}
+
+/* ─── Page Headers / Titles ─────────────────────────────────────────────── */
+.page-header,
+.page-title-area {
+  padding: var(--spacing-sm) var(--spacing-md) !important;
+}
+
+/* ─── Avatar sizes removed to let UserAvatar handle it ───────────────────── */
+
+/* ─── Event / Club Cards ─────────────────────────────────────────────────── */
+.event-card-image {
+  height: 140px !important;
+}

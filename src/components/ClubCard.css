@@ -1,0 +1,100 @@
+.club-card {
+    cursor: pointer;
+    background: linear-gradient(150deg, #ffffff 0%, #f5f3ff 40%, #e9d5ff 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.9) !important;
+    box-shadow: 0 15px 35px -5px rgba(109, 40, 217, 0.15) !important;
+    border-radius: 24px !important;
+    overflow: hidden;
+}
+
+.club-card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.2s ease-in-out;
+}
+
+.club-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-lg) var(--spacing-lg) 0;
+}
+
+.club-card-logo {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.5);
+    border: 2px solid rgba(147, 51, 234, 0.2);
+}
+
+.club-card-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.club-card-title {
+    font-size: var(--font-size-xl);
+    font-weight: 800;
+    margin-bottom: var(--spacing-sm);
+    color: #4c1d95;
+}
+
+.club-card-description {
+    font-size: var(--font-size-sm);
+    color: #6b21a8;
+    margin-bottom: var(--spacing-md);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.club-card-meta {
+    display: flex;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+}
+
+.club-card-meta-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: var(--font-size-sm);
+    color: #6b21a8;
+    font-weight: 600;
+}
+
+.club-card-meta-item svg {
+    color: #8b5cf6;
+}
+
+.club-card-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+}
+
+.club-card-category {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: rgba(147, 51, 234, 0.1);
+    color: #4c1d95;
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+}
+@media (max-width: 768px) {
+    .club-card-logo {
+        width: 60px;
+        height: 60px;
+    }
+    .club-card-header {
+        padding: var(--spacing-md) var(--spacing-md) 0;
+    }
+    .club-card-title {
+        font-size: var(--font-size-lg);
+    }
+}
+

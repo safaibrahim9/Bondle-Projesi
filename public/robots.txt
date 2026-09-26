@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+Allow: /events
+Allow: /clubs
+Allow: /mentorship
+Allow: /projects
+Allow: /activities
+Disallow: /admin
+Disallow: /network
+Disallow: /profile
+Disallow: /premium
+Disallow: /login
+Disallow: /register
+Disallow: /auth
+Disallow: /onboarding
+Disallow: /notifications
+Disallow: /my-tasks
+
+Sitemap: https://bondlecommunity.com/sitemap.xml

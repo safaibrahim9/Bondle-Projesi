@@ -1,0 +1,166 @@
+﻿/* ConnectionsPage.css */
+
+.connection-list-card {
+    padding: var(--spacing-lg);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-subtle-border);
+}
+
+.connection-list-card:hover {
+    background: var(--color-bg-elevated);
+    border-color: var(--color-accent-primary);
+}
+
+.connection-card-inner {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.connection-avatar-wrapper {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+}
+
+.connection-avatar-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--color-accent-primary);
+}
+
+.connection-avatar-fallback {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+}
+
+.connection-info-container {
+    flex: 1;
+    min-width: 0;
+}
+
+.connection-name {
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 1.1rem;
+}
+
+.connection-title {
+    font-size: var(--font-size-sm);
+    color: var(--color-accent-secondary);
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.connection-bio {
+    font-size: 0.95rem;
+    color: var(--color-text-primary);
+    opacity: 0.9;
+    margin-bottom: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.connection-meta-row {
+    display: flex;
+    gap: 12px;
+}
+
+.connection-location {
+    font-size: 0.9rem;
+    color: var(--color-text-primary);
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.connection-actions-container {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-shrink: 0;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.connection-plan-btn {
+    white-space: nowrap;
+}
+
+/* MOBILE REFINEMENTS - COMPACT CONTACT LIST */
+@media (max-width: 768px) {
+    .connection-list-card {
+        padding: var(--spacing-sm) var(--spacing-md);
+        border-radius: var(--radius-xl);
+    }
+
+    .connection-card-inner {
+        gap: var(--spacing-sm);
+    }
+
+    .connection-avatar-wrapper {
+        width: 44px;
+        height: 44px;
+    }
+
+    .connection-avatar-fallback {
+        font-size: 1.2rem;
+    }
+    
+    .connection-avatar-img {
+        border-width: 2px;
+    }
+
+    .connection-name {
+        font-size: 1rem;
+        margin-bottom: 2px;
+    }
+
+    .connection-title {
+        font-size: 0.75rem;
+        margin-bottom: 0;
+    }
+
+    /* Hide bio completely on mobile to save vertical space */
+    .connection-bio {
+        display: none;
+    }
+
+    /* Hide location on mobile */
+    .connection-meta-row {
+        display: none;
+    }
+
+    /* Refine action buttons */
+    .connection-actions-container {
+        flex-direction: row; /* Put buttons side by side instead of stacked on mobile if space allows, or keep them minimal */
+        align-items: center;
+        gap: 6px;
+    }
+
+    .connection-plan-btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    .connection-plan-btn svg {
+        width: 14px;
+        height: 14px;
+    }
+}

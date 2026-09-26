@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/favicon-circle.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#f5f3ff" id="theme-color-meta" />
+    
+    <!-- Primary Meta Tags -->
+    <title>Bondle | Where Bonds Begin</title>
+    <meta name="title" content="Bondle | Where Bonds Begin" />
+    <meta name="description" content="Bondle, öğrenciler ve öğrenci kulüpleri için etkinlik, networking, topluluk ve mentorluk platformudur. Kariyerinize yön verin ve doğru bağlantıları kurun." />
+    <link rel="canonical" href="https://bondlecommunity.com/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bondlecommunity.com/" />
+    <meta property="og:title" content="Bondle | Where Bonds Begin" />
+    <meta property="og:description" content="Bondle, öğrenciler ve öğrenci kulüpleri için etkinlik, networking, topluluk ve mentorluk platformudur. Kariyerinize yön verin ve doğru bağlantıları kurun." />
+    <meta property="og:image" content="https://bondlecommunity.com/logo.png" />
+    <meta property="og:site_name" content="Bondle" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://bondlecommunity.com/" />
+    <meta property="twitter:title" content="Bondle | Where Bonds Begin" />
+    <meta property="twitter:description" content="Bondle, öğrenciler ve öğrenci kulüpleri için etkinlik, networking, topluluk ve mentorluk platformudur. Kariyerinize yön verin ve doğru bağlantıları kurun." />
+    <meta property="twitter:image" content="https://bondlecommunity.com/logo.png" />
+
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://bondlecommunity.com/#organization",
+          "name": "Bondle",
+          "url": "https://bondlecommunity.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://bondlecommunity.com/logo.png"
+          },
+          "description": "Bondle, öğrenciler ve öğrenci kulüpleri için etkinlik, networking, topluluk ve mentorluk platformudur.",
+          "sameAs": [
+            "https://www.instagram.com/bondlecommunity/",
+            "https://www.linkedin.com/company/bondlecommunity"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://bondlecommunity.com/#website",
+          "url": "https://bondlecommunity.com/",
+          "name": "Bondle",
+          "publisher": {
+            "@id": "https://bondlecommunity.com/#organization"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="https://unpkg.com/@livekit/components-styles/dist/general/index.css">
+    <script>
+      (function() {
+        try {
+          // Force light theme for consistent colors across all browsers
+          var savedTheme = 'light';
+          localStorage.setItem('app-theme', 'light');
+          document.documentElement.setAttribute('data-theme', 'light');
+          var metaTheme = document.getElementById('theme-color-meta');
+          if (metaTheme) {
+            metaTheme.setAttribute('content', '#f5f3ff');
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root">
+      <style>
+        :root {
+          --loader-bg: #0f172a;
+          --loader-text: #fff;
+          --loader-ring: #8b5cf6;
+          --loader-border: rgba(255, 255, 255, 0.1);
+        }
+        :root[data-theme='light'] {
+          --loader-bg: #F5F3FF;
+          --loader-text: #2e1065;
+          --loader-ring: #7c3aed;
+          --loader-border: rgba(124, 58, 237, 0.15);
+        }
+        .initial-loader-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+          width: 100vw;
+          background-color: var(--loader-bg);
+          color: var(--loader-text);
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        .initial-loader {
+          width: 48px;
+          height: 48px;
+          border: 4px solid var(--loader-border);
+          border-left-color: var(--loader-ring);
+          border-radius: 50%;
+          animation: spin 1s linear infinite;
+          margin-bottom: 20px;
+        }
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+      </style>
+      <div class="initial-loader-container">
+        <div class="initial-loader"></div>
+        <div style="font-weight: 600; font-size: 1.1rem; letter-spacing: 0.5px;">Bondle Yükleniyor...</div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

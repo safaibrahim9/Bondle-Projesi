@@ -1,0 +1,68 @@
+﻿/* AdminResponsive.css - Mobile optimizations for Admin Panel */
+
+@media (max-width: 768px) {
+    /* Make all list rows stack vertically like cards */
+    .admin-list-item {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 12px !important;
+        position: relative;
+    }
+
+    /* Wrap the inner content of list items */
+    .admin-list-item > div {
+        width: 100% !important;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+    }
+
+    /* For action buttons group (usually the last div) */
+    .admin-list-item > div:last-child {
+        justify-content: stretch !important;
+        margin-top: 8px;
+        flex-direction: row !important;
+        display: flex !important;
+    }
+
+    /* Make buttons inside list items flex grow */
+    .admin-list-item > div:last-child > button {
+        flex: 1;
+        justify-content: center;
+        padding: 10px !important;
+    }
+
+    /* Dashboard Stats Grid */
+    .page-header + div {
+        grid-template-columns: 1fr 1fr !important;
+    }
+    
+    /* Make stats grid full width on very small screens */
+    @media (max-width: 400px) {
+        .page-header + div {
+            grid-template-columns: 1fr !important;
+        }
+    }
+
+    /* Avoid overflow on cards */
+    .glass-card, .poster-card {
+        max-width: 100vw !important;
+        box-sizing: border-box;
+    }
+    
+    /* Allow horizontal scroll for raw tables if they exist */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    /* Remove unnecessary large paddings */
+    .container {
+        padding-left: var(--spacing-sm) !important;
+        padding-right: var(--spacing-sm) !important;
+    }
+    
+    .page-header h1 {
+        font-size: 1.5rem !important;
+    }
+}

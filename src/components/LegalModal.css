@@ -1,0 +1,96 @@
+.legal-modal-overlay {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.legal-modal-container {
+    background: var(--color-bg-primary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    max-width: 500px;
+    width: 100%;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.legal-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: var(--color-text-secondary);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    z-index: 10;
+}
+
+.legal-modal-close:hover {
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+}
+
+.legal-modal-body {
+    padding: 32px 24px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.legal-content h2 {
+    font-size: 24px;
+    color: var(--color-text-primary);
+    margin-bottom: 24px;
+    text-align: center;
+    font-weight: 800;
+}
+
+.legal-icon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.legal-content p {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.legal-content p:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.legal-content strong {
+    color: var(--color-text-primary);
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.legal-content em {
+    color: var(--color-accent-primary);
+    font-style: normal;
+    font-weight: 600;
+}
+
+.legal-modal-footer {
+    padding: 16px 24px;
+    background: var(--color-bg-secondary);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}

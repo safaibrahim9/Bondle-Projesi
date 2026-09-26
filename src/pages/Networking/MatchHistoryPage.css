@@ -1,0 +1,167 @@
+.match-history-page .search-bar-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.match-history-page .search-icon {
+    position: absolute;
+    left: 20px;
+    color: var(--color-text-tertiary);
+}
+
+.match-history-page .search-input {
+    width: 100%;
+    padding: 16px 16px 16px 52px;
+    border-radius: 20px;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-subtle-border);
+    color: var(--color-text-primary);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.match-history-page .search-input:focus {
+    border-color: var(--color-accent-primary);
+    background: var(--color-bg-tertiary);
+    box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.1);
+    outline: none;
+}
+
+.match-history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.match-history-card {
+    background: var(--color-bg-secondary);
+    border-radius: 24px;
+    border: 1px solid var(--color-subtle-border);
+    cursor: pointer;
+    transition: all 0.25s ease;
+    overflow: hidden;
+}
+
+.match-history-card:hover {
+    transform: translateY(-2px);
+    background: var(--color-bg-tertiary);
+    border-color: rgba(139, 92, 246, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.match-history-card .card-inner {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+
+.user-info-section {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
+    min-width: 0;
+}
+
+.user-text h3 {
+    margin: 0 0 4px 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+.user-title {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.match-details-section {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.match-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 160px;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+}
+
+.meta-item .label {
+    color: var(--color-text-tertiary);
+    font-weight: 600;
+}
+
+.meta-item .value {
+    color: var(--color-text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.status-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.cancel-btn {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.cancel-btn:hover {
+    background: #ef4444;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .match-history-card .card-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .match-details-section {
+        width: 100%;
+        justify-content: space-between;
+        padding-top: 16px;
+        border-top: 1px solid var(--color-subtle-border);
+    }
+    
+    .cancel-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+}
