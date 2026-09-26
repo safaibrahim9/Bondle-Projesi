@@ -4,6 +4,18 @@ Bondle, üniversite öğrencilerini, genç profesyonelleri, öğrenci kulüpleri
 
 Bu proje; gençlerin ilgi alanlarına uygun kişileri bulup ağ kurmasını (Networking), kulüplerin kendi biletli/ücretsiz etkinliklerini yönetmesini ve kullanıcıların sektör profesyonellerinden mentorluk almasını sağlayan kapsamlı bir altyapıya sahiptir.
 
+## 📱 Uygulama Ekran Görüntüleri
+
+Aşağıda projemizin kullanıcı dostu arayüzünden bazı örnekler bulunmaktadır:
+
+<p align="center">
+  <img src="assets/home.png" width="18%" />
+  <img src="assets/events.png" width="18%" />
+  <img src="assets/clubs.png" width="18%" />
+  <img src="assets/club-detail.png" width="18%" />
+  <img src="assets/profile.png" width="18%" />
+</p>
+
 ## 🌟 Temel Özellikler
 * **Gelişmiş Networking (Ağ Kurma):** İlgi alanlarına (Yazılım, Tasarım, Finans vb.) ve şehirlere göre dinamik kullanıcı filtreleme.
 * **Topluluk ve Etkinlik Yönetimi:** Kulüpler için duyuru yapma, etkinlik oluşturma ve katılımcı listesini yönetme panelleri.
@@ -22,7 +34,7 @@ Bu proje; gençlerin ilgi alanlarına uygun kişileri bulup ağ kurmasını (Net
 * Capacitor (Mobil Derleme)
 
 **Backend & Servisler:**
-* Node.js / Express
+* Node.js / NestJS
 * Render (Backend Canlı Sunucu)
 * Vercel (Frontend Canlı Sunucu)
 * Agora RTC & RTM (Gerçek Zamanlı İletişim)
@@ -34,7 +46,7 @@ Projeyi yerel ortamınızda (localhost) çalıştırmak için aşağıdaki adım
 
 1. Depoyu bilgisayarınıza klonlayın:
    ```bash
-   git clone https://github.com/safaibrahim9/Bondle-Uygulamasi.git
+   git clone https://github.com/safaibrahim9/Bondle-Projesi.git
    ```
 2. Frontend dizinine giderek gerekli paketleri yükleyin:
    ```bash
